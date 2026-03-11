@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор материалов для окна</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1 class="logo">WINDOW<span>CALC</span></h1>
+      <p class="subtitle">Расчёт материалов для монтажа окна</p>
+    </header>
+
+    <div class="calculator-card">
+      <!-- Ввод данных -->
+      <section class="input-section">
+        <div class="form-group">
+          <label for="windowWidth">Ширина окна</label>
+          <div class="input-wrapper">
+            <span class="input-icon">↔️</span>
+            <input type="number" id="windowWidth" placeholder="1200" min="1" step="1">
+            <span class="unit-label">мм</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="windowHeight">Высота окна</label>
+          <div class="input-wrapper">
+            <span class="input-icon">↕️</span>
+            <input type="number" id="windowHeight" placeholder="1400" min="1" step="1">
+            <span class="unit-label">мм</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="openingDepth">Ширина проёма (глубина стены)</label>
+          <div class="input-wrapper">
+            <span class="input-icon">⬅️➡️</span>
+            <input type="number" id="openingDepth" placeholder="400" min="1" step="1">
+            <span class="unit-label">мм</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="unitSelect">Единицы ввода</label>
+          <div class="input-wrapper">
+            <select id="unitSelect">
+              <option value="mm" selected>мм</option>
+              <option value="cm">см</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn-calculate" id="calculateBtn">Рассчитать материалы</button>
+        <button class="btn-cost" id="calcCostBtn">Рассчитать стоимость</button>
+      </section>
+
+      <!-- Результаты -->
+      <section class="result-section">
+        <h2 class="result-title">Результат расчёта</h2>
+
+        <div id="errorMessage" class="error-message hidden"></div>
+
+        <div id="resultView" class="result-view">
+          Введите данные и нажмите «Рассчитать материалы»
+        </div>
+
+        <button class="btn-reset" id="resetBtn">Сбросить</button>
+      </section>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
